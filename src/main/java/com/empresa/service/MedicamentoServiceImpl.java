@@ -32,7 +32,24 @@ public class MedicamentoServiceImpl implements MedicamentoService{
 		return repository.findById(idMedicamento);
 	}
 	
+	@Override
+	public Optional<Medicamento> buscarPorId(int idMedicamento) {
+		return repository.findById(idMedicamento);
+	}
 	
+	 @Override
+	    public List<Medicamento> obtenerPorNombre(String nombre) {
+	        return repository.findByNombreLike(nombre);
+	    }
+	 
+	 @Override
+	    public List<Medicamento> obtenerPorStock(int stock) {
+	        return repository.findByStock(stock);
+	    }
+
+	
+
+
 	
 }
 
